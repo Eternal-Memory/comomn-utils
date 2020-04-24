@@ -3,6 +3,24 @@ package com.zhangcg.common.utils;
 import java.util.Random;
 
 public class StringUtil {
+	// 判断一个字符串是否是数字 考虑整数 负数 小数
+	public static boolean isNumber(String src) {
+		String reg="^(-)?[0-9]+(\\.[0-9]+)?$";
+		return src.matches(reg);
+	}
+	
+	// 判断是否是中国的手机号
+	public static boolean isPhone(String src) {
+		String reg="^1[3|4|5|7|8]\\d{9}$";
+		return src.matches(reg);
+	}
+	
+	// 判断是否邮箱
+	public static boolean idEmail(String src) {
+		String reg="^\\w+\\@\\w+\\.\\w+$";
+		return src.matches(reg);
+	}
+	
 	//方法1：判断源字符串是否有值，空引号(空白字符串)也算没值 (5分)
 	public static boolean hasLength(String src){
 		return null!=src && src.length()>0;
