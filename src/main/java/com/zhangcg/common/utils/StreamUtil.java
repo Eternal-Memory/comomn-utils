@@ -53,7 +53,7 @@ public class StreamUtil {
 		}finally {
 			closeAll(reader);
 		}
-		return str;
+		return sb.toString();
 	}
 	
 	/**

@@ -19,21 +19,20 @@ public class StreamUtilTest {
 	@Test
 	public void testReadTextFileInputStream() throws FileNotFoundException {
 		String path ="C:/Users/hp/Desktop/a.txt";
-		
 		String string = StreamUtil.readTextFile(new FileInputStream(path));
 		System.out.println(string);
 	}
 
 	@Test
 	public void testReadTextFileFile() {
-		String path ="‪C:/Users/hp/Desktop/a.txt";
+		String path ="C:\\Users\\hp\\Desktop\\a.txt";
 		String file = StreamUtil.readTextFile(new File(path));
 		System.out.println(file);
 	}
 
 	@Test
 	public void testReadTextFile2List() {
-		String path ="‪C:/Users/hp/Desktop/a.txt";
+		String path ="C:\\Users\\hp\\Desktop\\a.txt";
 		List<String> list = StreamUtil.readTextFile2List(new File(path));
 		for (String string : list) {
 			System.out.println(string);
