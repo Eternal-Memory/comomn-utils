@@ -40,20 +40,23 @@ public class StreamUtil {
 	 * @return
 	 */
 	public static String readTextFile(InputStream src) {
-		BufferedReader reader = new BufferedReader(new InputStreamReader(src));
-		String str=null;
-		StringBuffer sb = new StringBuffer();
+		byte[] b=new byte[1024];
+		int len;
 		try {
-			while ((str=reader.readLine())!=null) {
-				sb.append(str);
+			while ((len=src.read(b))!=-1) {
+				return new String(b, 0, len);
 			}
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}finally {
-			closeAll(reader);
+		} catch (Exception e) {
+			// TODO: handle exception
 		}
-		return sb.toString();
+		return null;
+		/*
+		 * BufferedReader reader = new BufferedReader(new InputStreamReader(src));
+		 * String str=null; StringBuffer sb = new StringBuffer(); try { while
+		 * ((str=reader.readLine())!=null) { sb.append(str); } } catch (IOException e) {
+		 * // TODO Auto-generated catch block e.printStackTrace(); }finally {
+		 * closeAll(reader); } return sb.toString();
+		 */
 	}
 	
 	/**
@@ -79,6 +82,7 @@ public class StreamUtil {
 	 */
 	public static List<String> readTextFile2List(File txtFile){
 		List<String> list = new ArrayList<String>();
+		//¹¹½¨BufferedReader
 		try {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(txtFile)));
 			String str=null;
