@@ -23,7 +23,15 @@ public class AssertUtilTest {
 
 	@Test
 	public void testIsFalse() {
-		fail("Not yet implemented");
+		try {
+			AssertUtil.isFalse(3 > 10, "3不大于10");
+		} catch (AssertException e) {
+			System.out.println(e.getMessage());
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("程序出现异常，请联系管理员");
+		}
 	}
 
 	@Test

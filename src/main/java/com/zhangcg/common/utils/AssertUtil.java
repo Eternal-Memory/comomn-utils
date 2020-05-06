@@ -18,7 +18,7 @@ public class AssertUtil {
 	}
 	//方法2：断言为假，如果为真，则抛出自定义异常，异常消息为第2个参数默认消息。 (5分)
 	public static void isFalse(boolean condition, String message){
-		if(condition)
+		if(!condition)
 			 throw new AssertException(message);
 	
 	}
@@ -46,7 +46,7 @@ public class AssertUtil {
 	}
 	//方法7：断言字符串必须有值，去掉空格，然后判断字符串长度是否大于0，如果没值，则抛出自定义异常，异常消息为第2个参数默认消息。 (5分)
 	public static void hasText(String condition, String message){
-		if(!StringUtil.hasText(condition))
+		if(StringUtil.hasText(condition))
 			throw new AssertException(message);
 	
 	}

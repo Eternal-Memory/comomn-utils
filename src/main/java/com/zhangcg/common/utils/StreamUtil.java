@@ -40,7 +40,7 @@ public class StreamUtil {
 	 * @return
 	 */
 	public static String readTextFile(InputStream src) {
-		byte[] b=new byte[1024];
+		byte[] b=new byte[4096];
 		int len;
 		try {
 			while ((len=src.read(b))!=-1) {
