@@ -12,7 +12,7 @@ import com.sun.org.apache.bcel.internal.generic.NEW;
  *
  */
 public class DateUtil {
-	public Date SubDate(Date date,int hours) {
+	public static Date SubDate(Date date,int hours) {
 		Calendar c = Calendar.getInstance();
 		c.setTime(date);
 		c.add(Calendar.HOUR_OF_DAY, -hours);
